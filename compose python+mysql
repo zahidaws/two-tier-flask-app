@@ -15,7 +15,7 @@ services:
     networks:
       - 2tier
     healthcheck:
-      test: 
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot"]
       interval: 10s
       timeout: 5s
       retries: 5
